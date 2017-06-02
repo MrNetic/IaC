@@ -1,10 +1,17 @@
 #Login
+ param (
+        [Parameter(Mandatory=$false)][string]$DebugFlag
+ )
+
+IF ($DebugFlag -eq "true")
+{
 $StartDate=get-date
 write-host    'Executing Authentication Module>>' $MyInvocation.MyCommand.Name '<< at UTC' $StartDate.ToUniversalTime() 'with the configuration bellow:' `
 -foregroundcolor "DarkBlue" -backgroundcolor "gray"
+}
 try 
 {
-    Login-AzureRmAccount
+     Get-AzureRmSubscription
 }
 catch 
 {
