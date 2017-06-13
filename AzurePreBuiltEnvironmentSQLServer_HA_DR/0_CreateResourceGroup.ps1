@@ -7,7 +7,7 @@ Get-AzureRmSubscription
 #Select correct subscription
 Select-AzureRmSubscription -SubscriptionId e7c49cc2-f1dd-458b-b592-a9f941b5c9a5
 
-#Creating 2 Resouce Group in different Regions, One in Ireland and the other In Amsterdam
+#Creating 2 Resouce Group in different Regions, One in WestEurope and the other In WestCentralUs
 
 New-AzureRmResourceGroup -Name rgInfrastructure01 -Location "WestEurope"
 

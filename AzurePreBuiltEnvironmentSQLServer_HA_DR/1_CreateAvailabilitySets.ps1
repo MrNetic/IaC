@@ -1,16 +1,23 @@
 #Starting in Ireland, lets create our Availability sets.
 # In a nutshell: to avoid having a single point of failure on network/rack/software updates
+# A numero de FaulDomains difere de datacenter para datacenter...
+#latest version
+Install-Module AzureRM.Compute -RequiredVersion 2.6.0
+#WestEurope
+New-AzureRmAvailabilitySet -ResourceGroupName rgInfrastructure01 -Name asDomainControllers01 -Location "westeurope" -managed -PlatformFaultDomainCount 3 
 
-#Ireland DCs
-New-AzureRmAvailabilitySet -ResourceGroupName rgInfrastructure01 -Name asDomainControllers01 -Location "westeurope"
-
-#Amsterdam DCs
-New-AzureRmAvailabilitySet -ResourceGroupName rgInfrastructure02 -Name asDomainControllers02 -Location "WestCentralUs"
+#WestCentralUs
+New-AzureRmAvailabilitySet -ResourceGroupName rgInfrastructure02 -Name asDomainControllers02 -Location "WestCentralUs" -managed -PlatformFaultDomainCount 2
 
 #Ireland SQLServer
-New-AzureRmAvailabilitySet -ResourceGroupName rgInfrastructure01 -Name asSQLServer01 -Location "westeurope"
+New-AzureRmAvailabilitySet -ResourceGroupName rgInfrastructure01 -Name asSQLServer01 -Location "westeurope" -managed -PlatformFaultDomainCount 3
 
 #Amsterdam SQLServer
-New-AzureRmAvailabilitySet -ResourceGroupName rgInfrastructure02 -Name asSQLServer02 -Location "WestCentralUs"
+New-AzureRmAvailabilitySet -ResourceGroupName rgInfrastructure02 -Name asSQLServer02 -Location "WestCentralUs" -managed -PlatformFaultDomainCount 2
 
-Get-AzureRmAvailabilitySet rgInfrastructure01
+#WestEurope
+New-AzureRmAvailabilitySet -ResourceGroupName rgInfrastructure01 -Name asStorage01 -Location "westeurope" -managed -PlatformFaultDomainCount 3 
+
+#WestCentralUs
+New-AzureRmAvailabilitySet -ResourceGroupName rgInfrastructure02 -Name asStorage02 -Location "WestCentralUs" -managed -PlatformFaultDomainCount 2
+
