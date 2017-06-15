@@ -11,7 +11,6 @@ $gwpip1 = New-AzureRmPublicIpAddress -Name $GWIPName1 -ResourceGroupName $RG1 `
 -Location $Location1 -AllocationMethod Dynamic
 
 #Create Gateway Config
-
 $vnet1 = Get-AzureRmVirtualNetwork -Name $VNetName1 -ResourceGroupName $RG1
 $subnet1 = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet1
 $gwipconf1 = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName1 `
@@ -22,7 +21,7 @@ New-AzureRmVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1 `
 -Location $Location1 -IpConfigurations $gwipconf1 -GatewayType Vpn `
 -VpnType RouteBased -GatewaySku Standard
 
-
+#REPEAT FOR West Central Us
 #West Central Us
 $RG2 ="rgInfrastructure02"
 $Location2 = "WestCentralUs"

@@ -6,7 +6,6 @@ Restart-Computer -force
 Install-WindowsFeature –Name Failover-Clustering,File-Services,FS-FileServer –IncludeManagementTools
 
 
-
 #Create Cluster
 New-Cluster -Name WestEuropeStorage01 -Node Storage01,Storage02 -StaticAddress 192.168.115.24 -NoStorage
 
