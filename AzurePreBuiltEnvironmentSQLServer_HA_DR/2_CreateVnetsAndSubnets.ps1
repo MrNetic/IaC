@@ -1,3 +1,8 @@
+#https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview
+# Not that I haven't used NetworkSecurityGroups (NSGs) just for simplicity on this implementation
+# NSGs or NetworkVirtualAplicances can be used to filter inbout & outbound traffic
+
+
 #Create The Virtual Network in Dublin
 $vnetName= "VnetProductionWestEurope"
 $Vnet = New-AzureRmVirtualNetwork -ResourceGroupName rgInfrastructure01 -Name $vnetName -AddressPrefix 192.168.0.0/16 -Location westeurope

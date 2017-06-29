@@ -1,5 +1,6 @@
 #Create VMs
-
+#https://azure.microsoft.com/en-us/pricing/details/virtual-machines/windows/
+#Machine sizes 
 #Administrative Account to be locally created on the servers:
 $cred    = Get-Credential 
 

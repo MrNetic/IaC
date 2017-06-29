@@ -1,3 +1,7 @@
+# managed disks 
+# https://azure.microsoft.com/en-us/services/managed-disks/
+#https://azure.microsoft.com/en-us/roadmap/managed-disks/
+# minimum 2 disk for machine for S2D, for better redundancy, we should have at least 3 cluster nodes
 #data1
 $machineName="Storage01"
 $rgName = 'rgInfrastructure01'

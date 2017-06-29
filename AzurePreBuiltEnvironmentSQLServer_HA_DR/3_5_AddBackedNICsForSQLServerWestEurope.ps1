@@ -1,3 +1,8 @@
+# TBC:
+# The objective here is to add 2 more NICS to the SQL Server instance
+# that are to be on the same subnet of where the 2 extra NICs of the storage servers are.
+# this is to add performance and availability leveraging SMB Multichannel for SOFS
+
 $machineName="SQL01"
 $rgName = 'rgInfrastructure01'
 $asName='asSQLServer01'
